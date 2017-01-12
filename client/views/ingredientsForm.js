@@ -10,7 +10,7 @@ module.exports = function(){
       <input type="checkbox" name="ingredientID" value = "ham"> ham<br>
       <input type="checkbox" name="ingredientID" value = "walnuts"> walnuts<br>
       <input type="checkbox" name="ingredientID" value = "butter"> butter<br>
-      <input type="button" name="submit" value = "submit">
+      <input type="button" name="submit" value = "submit" id="submit">
     </form>`
   )
 }

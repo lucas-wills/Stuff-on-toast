@@ -13,7 +13,7 @@ module.exports = function (model) {
       //request
       //  .get('/api/v1/resources')
       //  .then((res) =>  {
-      //    // this.update('myString',  
+      //    // this.update('myString',
 
       //  })
     },
@@ -24,6 +24,11 @@ module.exports = function (model) {
 
       this.notify(model)
     },
+
+    // showSpecificRecipe: function(){
+    //   request
+    //     .get('/api/v1/resources')
+    // }
 
     notify: function (model) {
       listeners.forEach(function (listener) {
