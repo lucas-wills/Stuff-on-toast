@@ -5,17 +5,6 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const api = require('./api')
 
-
-
-
-
-
-
-
-
-
-
-
 module.exports = function (db) {
   const app = express()
 
