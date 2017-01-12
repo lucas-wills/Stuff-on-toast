@@ -6,6 +6,16 @@ const bodyParser = require('body-parser')
 const api = require('./api')
 
 
+
+
+
+
+
+
+
+
+
+
 module.exports = function (db) {
   const app = express()
 
@@ -28,7 +38,7 @@ module.exports = function (db) {
       __dirname + "/public",
       __dirname + "/client",
     ])
-    
+
     app.use(require('inject-lr-script')())
 
     app.use(webpackDevMiddleware(compiler, {
