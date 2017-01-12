@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('ingredients', function(t){
-    t.increments('ingredient_id');
+    t.increments('id');
     t.string('ingredient_name')
   })
 };
