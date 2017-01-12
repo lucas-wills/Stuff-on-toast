@@ -7,7 +7,7 @@ module.exports = function (knex) {
 
     findById: function (table, id) {
       return knex(table).select().then((rows) => rows[0])
-    }
+    },
 
     getRecipesByIngredients: function (arrayOfIngredients) {
 
