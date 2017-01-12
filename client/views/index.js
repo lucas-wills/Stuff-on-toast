@@ -15,7 +15,7 @@ module.exports = function (model) {
         return ingredientsForm()
       case 'list of Recipes':
         return listOfRecipes()
-      case 'id-1':
+      case 'recipe view':
         return displaySpecificRecipe(view)
       case 'add new recipe form':
         return addNewRecipeForm()

@@ -30,8 +30,10 @@ module.exports = function (model) {
       this.update("view","list of Recipes")
     },
 
-    displaySpecificRecipe: function(){
-      this.update('view','id-1')
+    displaySpecificRecipe: function(recipeId){
+      console.log(recipeId)
+      this.update('view','recipe view')
+      this.update('recipeId', recipeId)
     },
     ingredientsForm:function(){
       this.update('view','select ingredients')
@@ -39,7 +41,9 @@ module.exports = function (model) {
     addNewRecipeForm:function(){
       this.update('view','add new recipe form')
     },
-
+    // addRecipe: funciton(){
+    //   this.update('view', 'list of Recipes')
+    // },
     // showSpecificRecipe: function(){
     //   request
     //     .get('/api/v1/resources')

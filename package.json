@@ -14,6 +14,7 @@
     "debug": "~2.2.0",
     "easy-livereload": "^1.2.0",
     "express": "^4.13.4",
+    "get-form-data": "^1.2.5",
     "knex": "^0.12.6",
     "livereload": "^0.6.0",
     "lodash": "^4.17.4",
