@@ -9,11 +9,24 @@ const displaySpecificRecipe = require('./displaySpecificRecipe')
 module.exports = function (model) {
 
   function switchStates(view){
-    if(view === "select ingredients"){
-      return ingredientsForm()
-    } else if(view === "list of Recipes"){
-      return listOfRecipes()
+
+    switch (view) {
+      case 'select ingredients':
+        return ingredientsForm()
+      case 'list of Recipes':
+        return listOfRecipes()
+        case 'id-1':
+        return displaySpecificRecipe(view)
+
+      break;
+      default:
+
     }
+    // if(view === "select ingredients"){
+    //   return ingredientsForm()
+    // } else if(view === "list of Recipes"){
+    //   return listOfRecipes()
+    // }
   }
 const content = switchStates(model.view);
 

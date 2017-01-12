@@ -28,10 +28,10 @@ module.exports = function (model) {
 
     listOfRecipes: function(){
       this.update("view","list of Recipes")
-      //function of the submitted ingredients.
-      // calls the database method which filters the recipes by ingredients
-      //getRecipesByIngredients
-      //calls the view function with the recipes matching the ingredients
+    },
+
+    displaySpecificRecipe: function(){
+      this.update('view','id-1')
     },
 
     // showSpecificRecipe: function(){

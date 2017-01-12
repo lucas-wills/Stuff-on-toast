@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function(id){
   return (
     `
     <h2>Specific Recipe</h2>

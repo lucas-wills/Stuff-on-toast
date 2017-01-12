@@ -15,7 +15,9 @@ module.exports = function (store) {
         // fire a stor method here
         // telling the store to update
         break
-
+        case 'id-1':
+        console.log('you got the first recipe')
+        store.displaySpecificRecipe('id-1')
 
 
     }
