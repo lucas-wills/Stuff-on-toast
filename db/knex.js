@@ -7,9 +7,3 @@ function listAllRecipes(){
   return knex('recipes')
   .select('*')
 }
-
-function findRecipesByIngredients(ingredients){
-  return knex('recipes')
-  .join('ing_rec_join', 'recipes.id', '=', 'ing_rec_join.recipe_id')
-  .join('ingredients', 'ingredients.id', '=', 'ing_rec_join.ingredient_id')
-}
