@@ -25,15 +25,15 @@ test.afterEach.always(() => {
   return testKnex.migrate.rollback()
 })
 
-test('' (t) => {
-  t.plan()
-
-  const expected = [] //contains ingredients
-
-  request(makeApp())
-    .get('api/v1/recipes')
-    .query({recipeList: []}) //contains ingredients
-    .then(res => {
-      t.deepEqual(res.body.data, expected)
-    })
-})
+// test('' (t) => {
+//   t.plan()
+//
+//   const expected = [] //contains ingredients
+//
+//   request(makeApp())
+//     .get('api/v1/recipes')
+//     .query({recipeList: []}) //contains ingredients
+//     .then(res => {
+//       t.deepEqual(res.body.data, expected)
+//     })
+// })

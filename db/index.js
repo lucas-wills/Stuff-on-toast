@@ -9,8 +9,8 @@ module.exports = function (knex) {
       return knex(table).select().then((rows) => rows[0])
     },
 
-    getRecipesByIngredients: function (arrayOfIngredients) {
-
+    findRecipesByIngredients: function (arrayOfIngredients) {
+      return 'test'
     }
   }
 }

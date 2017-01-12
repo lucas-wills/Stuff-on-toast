@@ -1,10 +1,9 @@
 const test = require('ava')
-const seedCats = require('../../db/seed-cats')
 
 // instantiate test database and routes
 const testKnex = require('knex')(require('../../knexfile').test)
 const db = require('../../db')(testKnex)
-const findRecipesByIngredients = require('../db/???') //Don't forget to add the correct path here
+// const db = require('../../db') //Don't forget to add the correct path here
 
 //migrate the latest cats database table
 test.beforeEach(() => {
@@ -41,7 +40,7 @@ test('findRecipesByIngredients | returns all recipes from db which include no mo
       ]
 
   //Act
-  const actual = findRecipesByIngredients(ingredients)
+  const actual = db.findRecipesByIngredients(ingredients)
 
   //Assert
   t.deepEqual(expected, actual, 'returns all and only the recipes which can be made with selected ingredients')
