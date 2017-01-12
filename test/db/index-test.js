@@ -4,6 +4,7 @@ const seedCats = require('../../db/seed-cats')
 // instantiate test database and routes
 const testKnex = require('knex')(require('../../knexfile').test)
 const db = require('../../db')(testKnex)
+const findRecipesByIngredients = require('../db/???') //Don't forget to add the correct path here
 
 //migrate the latest cats database table
 test.beforeEach(() => {
