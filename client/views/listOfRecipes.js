@@ -4,9 +4,9 @@ module.exports = function(){
    `
     <h2>Recipes you matched with</h2>
       <ul>
-        <li>Fancy toast</li>
-        <li>Crazy toast</li>
-        <li>Basic toast</li>
+        <li><a href="#" id="id-1">Fancy toast</a></li>
+        <li><a href="#" id="id-2">Crazy Toast</a></li>
+        <li><a href="#" id="id-3">Basic Toast</a></li>
       </ul>
 
    `

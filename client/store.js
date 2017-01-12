@@ -1,5 +1,6 @@
 const request = require('superagent')
 require('superagent-as-promised')(request)
+const listOfRecipes = require('./views/listOfRecipes')
 
 module.exports = function (model) {
   const listeners = []
@@ -23,6 +24,14 @@ module.exports = function (model) {
       console.log('model after update:', model)
 
       this.notify(model)
+    },
+
+    listOfRecipes: function(){
+      this.update("view","list of Recipes")
+      //function of the submitted ingredients.
+      // calls the database method which filters the recipes by ingredients
+      //getRecipesByIngredients
+      //calls the view function with the recipes matching the ingredients
     },
 
     // showSpecificRecipe: function(){

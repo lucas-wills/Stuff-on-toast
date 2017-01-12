@@ -11,7 +11,7 @@ module.exports = function (store) {
     switch (e.target.id) {
       case 'submit':
         console.log('you clicked submit')
-        store.showSpecificRecipe()        
+        store.listOfRecipes()
         // fire a stor method here
         // telling the store to update
         break
