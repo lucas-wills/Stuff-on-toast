@@ -20,10 +20,16 @@ test.afterEach.always(() => {
   return testKnex.migrate.rollback()
 })
 
-//TEST 1 - gets all the cats table data, then checks each row has an idea (truthy) and then checks the name in the row matches the index of the seed data.
-//test('find | responds with a list of cats', (t) => {
-//  //t.plan(4)
-//
-// // return db promise method here
-//  
-//})
+test('findRecipesByIngredients | returns all recipes from db which include no more than the submitted ingredients', (t) => {
+  t.plan(1)
+
+  //Arrange
+  const ingredients = ['cheese', 'eggs'] //OR {cheese: true, eggs: true, bacon: false}
+  const expected = [] //array of all recipes which have no ingredients not in ingredients
+
+  //Act
+  const actual = findRecipesByIngredients(ingredients)
+
+  //Assert
+  t.deepEqual(expected, actual, 'returns all and only the recipes which can be made with selected ingredients')
+})
