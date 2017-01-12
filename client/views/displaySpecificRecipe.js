@@ -1,6 +1,7 @@
 module.exports = function(id){
   return (
     `
+    <input type="button" name="home" value = "home" id="home">
     <h2>Specific Recipe</h2>
     <h3 id="ingredients">Ingredients</h3>
       <ul>

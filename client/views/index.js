@@ -3,7 +3,7 @@ const form = require('./form')
 const ingredientsForm = require('./ingredientsForm')
 const listOfRecipes = require ('./listOfRecipes')
 const displaySpecificRecipe = require('./displaySpecificRecipe')
-
+const addNewRecipeForm = require('./addNewRecipeForm')
 
 
 module.exports = function (model) {
@@ -15,8 +15,11 @@ module.exports = function (model) {
         return ingredientsForm()
       case 'list of Recipes':
         return listOfRecipes()
-        case 'id-1':
+      case 'id-1':
         return displaySpecificRecipe(view)
+      case 'add new recipe form':
+        return addNewRecipeForm()
+
 
       break;
       default:

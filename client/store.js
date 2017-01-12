@@ -33,6 +33,12 @@ module.exports = function (model) {
     displaySpecificRecipe: function(){
       this.update('view','id-1')
     },
+    ingredientsForm:function(){
+      this.update('view','select ingredients')
+    },
+    addNewRecipeForm:function(){
+      this.update('view','add new recipe form')
+    },
 
     // showSpecificRecipe: function(){
     //   request

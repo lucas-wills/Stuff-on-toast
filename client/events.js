@@ -8,24 +8,22 @@ module.exports = function (store) {
     e.preventDefault()
     console.log('clicked', e.target)
 
-    switch (e.target.id) {
+      switch (e.target.id) {
       case 'submit':
         console.log('you clicked submit')
         store.listOfRecipes()
-        // fire a stor method here
-        // telling the store to update
         break
-        case 'id-1':
+
+      case 'id-1':
         console.log('you got the first recipe')
         store.displaySpecificRecipe('id-1')
-
-
+        break
+      case 'home':
+        store.ingredientsForm()
+        break
+      case 'add':
+        store.addNewRecipeForm()
+        break
     }
-
-
   })
-
-
-
-
 }

@@ -1,8 +1,9 @@
 module.exports = function(){
   return (
     `<form action="#">
-    <input type="button" name="addNewRecipe" value="Add New Recipe" id="add">
-    <h2>Ingredients</h2>
+    <h2>New Recipe</h2>
+    <input type="text" name="recipeName" placeholder= "write name here">
+    <h3>Ingredients</h3>
       <input type="checkbox" name="ingredientID" value = "cheese"> Cheese<br>
       <input type="checkbox" name="ingredientID" value = "feta"> feta<br>
       <input type="checkbox" name="ingredientID" value = "orange"> orange<br>
@@ -11,7 +12,16 @@ module.exports = function(){
       <input type="checkbox" name="ingredientID" value = "ham"> ham<br>
       <input type="checkbox" name="ingredientID" value = "walnuts"> walnuts<br>
       <input type="checkbox" name="ingredientID" value = "butter"> butter<br>
-      <input type="button" name="submit" value = "submit" id="submit">
+
+    <h3>Instructions</h3>
+    <input type="text" name="instructions" placeholder="write instructions here">
+
+     <h3>Hints/Tips</h3>
+     <input type="text" name="hints" placeholder="write hints/tips here">
+
+     <h3>Image</h3>
+     <input type="text" name="URL" placeholer="www.url"><br>
+     <input type="button" name="add" value = "Make Recipe" id="make">
     </form>`
   )
 }
