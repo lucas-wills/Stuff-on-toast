@@ -1,5 +1,5 @@
 module.exports = function (knex) {
-  
+
   return {
     find: function (table, options) {
       return knex(table).select()
@@ -7,6 +7,10 @@ module.exports = function (knex) {
 
     findById: function (table, id) {
       return knex(table).select().then((rows) => rows[0])
+    },
+
+    findRecipesByIngredients: function (arrayOfIngredients) {
+      return 'test'
     }
   }
 }
