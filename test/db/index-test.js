@@ -141,3 +141,25 @@ test('listOneRecipe | returns a list of one recipes', (t) => {
     t.deepEqual(data,expected)
   })
 })
+
+
+test.only('addRecipe | adds a recipe to the database and an entry to the join table with the corresponding ingredients', (t) => {
+  t.plan(1)
+
+  //Arrange
+  const ingredientIds = [1, 2]
+  const recipeName = 'French Toast'
+  const method = "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM"
+  const imgUrl = 'www.realimage4sure.com'
+  const expectedRecipeEntry = {
+    recipe_id: 4,
+    recipe_name: 'French Toast',
+    method: "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM",
+    image: 'www.realimage4sure.com'
+  }
+  //Act
+  db.addRecipe(ingredientIds, recipeName, method, imgUrl)
+
+  //Assert
+  t.deepEqual(db.findById(4), expectedRecipeEntry)
+})
