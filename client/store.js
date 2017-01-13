@@ -11,7 +11,7 @@ module.exports = function (model) {
     },
 
     fetchResource: function () {
-      //request
+      // request
       //  .get('/api/v1/resources')
       //  .then((res) =>  {
       //    // this.update('myString',
@@ -26,20 +26,24 @@ module.exports = function (model) {
       this.notify(model)
     },
 
-    listOfRecipes: function(){
-      this.update("view","list of Recipes")
+    listOfRecipes: function () {
+      this.update('view', 'list of Recipes')
     },
 
-    displaySpecificRecipe: function(recipeId){
+    displaySpecificRecipe: function (recipeId) {
       console.log(recipeId)
-      this.update('view','recipe view')
+      this.update('view', 'recipe view')
       this.update('recipeId', recipeId)
     },
-    ingredientsForm:function(){
-      this.update('view','select ingredients')
+    ingredientsForm: function () {
+      request.get('/api/v1/ingredients')
+        .then(res => {
+          this.update('ingredients', res.body)
+        })
+      this.update('view', 'select ingredients')
     },
-    addNewRecipeForm:function(){
-      this.update('view','add new recipe form')
+    addNewRecipeForm: function () {
+      this.update('view', 'add new recipe form')
     },
     // addRecipe: funciton(){
     //   this.update('view', 'list of Recipes')

@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('recipes').del()
     .then(function () {
@@ -23,6 +23,6 @@ exports.seed = function(knex, Promise) {
           method: 'Cook bacon. Poach eggs. Add toast',
           image: 'http://www.eggcrackin.com/wp-content/uploads/2015/12/047a9eff.product_classic.png'
         })
-      ]);
-    });
-};
+      ])
+    })
+}

@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function () {
   return (
     `<form action="#" id="make-new-form">
       <input type="button" name="home" value = "home" id="home">

@@ -34,7 +34,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -47,7 +47,7 @@ module.exports = {
     },
     seeds: {
       directory: './db/seeds'
-    },
+    }
   },
 
   production: {
@@ -62,6 +62,6 @@ module.exports = {
       directory: './db/seeds'
     },
     useNullAsDefault: true
-  },
+  }
 
-};
+}

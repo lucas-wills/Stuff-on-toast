@@ -7,12 +7,10 @@ module.exports = function (db) {
   route.post('/', post)
   // console.log('Hello');
   function get (req, res, next) {
-    const ingredients = req.query.ingredients
-    console.log(req.query)
-
-    res.json({key: 'value'})
-    // db.findRecipesByIngredients(ingredients)
-    // db.get()
+    db.listAllIngredients('ingredients')
+      .then(rows => {
+        res.json({data: rows})
+      })
   }
 
   function post (req, res, next) {

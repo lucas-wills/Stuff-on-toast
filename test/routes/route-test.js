@@ -10,7 +10,7 @@ const recipesApi = require('../../api/recipes')(db)
 function makeApp () {
   const app = express()
   // set route namespace under test
- app.use('/api/v1/recipes', recipesApi)
+  app.use('/api/v1/recipes', recipesApi)
   return app
 }
 

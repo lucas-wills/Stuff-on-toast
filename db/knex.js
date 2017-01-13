@@ -3,7 +3,7 @@ const config = require('../knexfile')[process.env.NODE_ENV || 'development']
 
 module.exports = Knex(config)
 
-function listAllRecipes(){
+function listAllRecipes () {
   return knex('recipes')
   .select('*')
 }

@@ -52,6 +52,6 @@ module.exports = function (knex) {
         })
         return knex.insert(arrayToInsert).into('ing_rec_join')
       })
-
+    }
   }
 }

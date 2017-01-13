@@ -1,15 +1,12 @@
 const _ = require('lodash')
 const form = require('./form')
 const ingredientsForm = require('./ingredientsForm')
-const listOfRecipes = require ('./listOfRecipes')
+const listOfRecipes = require('./listOfRecipes')
 const displaySpecificRecipe = require('./displaySpecificRecipe')
 const addNewRecipeForm = require('./addNewRecipeForm')
 
-
 module.exports = function (model) {
-
-  function switchStates(view){
-
+  function switchStates (view) {
     switch (view) {
       case 'select ingredients':
         return ingredientsForm()
@@ -20,8 +17,7 @@ module.exports = function (model) {
       case 'add new recipe form':
         return addNewRecipeForm()
 
-
-      break;
+        break
       default:
 
     }
@@ -31,7 +27,7 @@ module.exports = function (model) {
     //   return listOfRecipes()
     // }
   }
-const content = switchStates(model.view);
+  const content = switchStates(model.view)
 
   return (
     `<div id="app">

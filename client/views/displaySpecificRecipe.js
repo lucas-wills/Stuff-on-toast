@@ -1,4 +1,4 @@
-module.exports = function(id){
+module.exports = function (id) {
   return (
     `
     <input type="button" name="home" value = "home" id="home">

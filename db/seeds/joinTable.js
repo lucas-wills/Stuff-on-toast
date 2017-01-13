@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('ing_rec_join').del()
     .then(function () {
@@ -30,6 +30,6 @@ exports.seed = function(knex, Promise) {
           recipe_id: 3,
           ingredient_id: 2
         })
-      ]);
-    });
-};
+      ])
+    })
+}

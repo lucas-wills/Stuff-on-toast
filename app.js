@@ -24,8 +24,8 @@ module.exports = function (db) {
     const lrserver = livereload.createServer()
 
     lrserver.watch([
-      __dirname + "/public",
-      __dirname + "/client",
+      __dirname + '/public',
+      __dirname + '/client'
     ])
 
     app.use(require('inject-lr-script')())
@@ -38,16 +38,14 @@ module.exports = function (db) {
 
   // routes
   app.use('/api/v1/recipes', api.recipes(db))
-  console.log(api);
+  app.use('/api/v1/ingredients', api.ingredients(db))
+  console.log(api)
 
   // static files
   app.use('/', express.static(path.join(__dirname, 'public')))
 
-
-
-
   // catch 404 and forward to error handler
-  app.use(function(req, res, next) {
+  app.use(function (req, res, next) {
     const err = new Error('Not Found')
     err.status = 404
     next(err)
@@ -58,7 +56,7 @@ module.exports = function (db) {
   // development error handler
   // will print stacktrace
   if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
       res.status(err.status || 500)
       res.json({
         message: err.message,
@@ -69,7 +67,7 @@ module.exports = function (db) {
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(err.status || 500)
     res.json({
       message: err.message,

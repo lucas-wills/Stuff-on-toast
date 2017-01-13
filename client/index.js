@@ -7,13 +7,13 @@ const view = require('./views/index')
 
 const model = {
   appName: 'Stuff on Toast',
-  view:"select ingredients",
-  recipeId:null
+  view: 'select ingredients',
+  ingredients: [],
+  recipeId: null
 }
 const store = Store(model)
 
 document.addEventListener('DOMContentLoaded', (e) => {
-
   events(store)
   store.subscribe((model) => {
     console.log('model:', model)
@@ -28,9 +28,5 @@ document.addEventListener('DOMContentLoaded', (e) => {
     morphdom(root, view(model))
   }
 
-
-
-  //store.fetchCats()
-
-
+  // store.fetchCats()
 })
