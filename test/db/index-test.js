@@ -120,3 +120,24 @@ test('listAllIngredients | returns a list of all ingredients', (t) => {
     t.deepEqual(data,expected)
   })
 })
+
+test('listOneRecipe | returns a list of one recipes', (t) => {
+  t.plan(1)
+
+  //Arrange
+  const expected =
+    {
+      id: 1,
+      recipe_name: 'poached egg',
+      method: 'Add a little vinegar to water just coming to the boil. Turn off the heat and gently break eggs into the water. Leave for 3 mins. Drain eggs well before putting onto toast',
+      image: 'http://www.jamieshomecookingskills.com/core_jo/images/jhcs/main-image-2556.jpg'
+    }
+
+  //Act
+  return db.listOneRecipe('recipes', '1')
+  .then(function(data){
+    console.log(data);
+    //Assert
+    t.deepEqual(data,expected)
+  })
+})

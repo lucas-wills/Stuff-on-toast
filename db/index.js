@@ -5,8 +5,10 @@ module.exports = function (knex) {
       return knex(table).select()
     },
 
-    findById: function (table, id) {
-      return knex(table).select().then((rows) => rows[0])
+    listOneRecipe: function (table, id) {
+      return knex(table)
+      .select()
+      .then((rows) => rows[0])
     },
 
     findRecipesByIngredients: function (ingredients){
