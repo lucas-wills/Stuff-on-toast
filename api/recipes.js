@@ -6,7 +6,7 @@ module.exports = function (db) {
   // GET api/v1/cats/
   route.get('/', get)
   route.post('/', post)
-  console.log('Hello');
+  // console.log('Hello');
   function get (req, res, next) {
     const ingredients = req.query.ingredients
     console.log(req.query);
