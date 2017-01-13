@@ -77,3 +77,46 @@ test('findRecipesByIngredients | returns the egg recipes ', (t) => {
     t.deepEqual(data,expected)
   })
 })
+
+// test('findRecipesByIngredients | returns the egg and bacon recipes ', (t) => {
+//   t.plan(1)
+//
+//   //Arrange
+//   const ingredients = [{id: 1},{id:2}] //OR {cheese: true, eggs: true, bacon: false}
+//   const expected = [
+//     {
+//       id: 3,
+//       recipe_name: 'bacon and eggs',
+//       method: 'Cook bacon. Poach eggs. Add toast',
+//       image: 'http://www.eggcrackin.com/wp-content/uploads/2015/12/047a9eff.product_classic.png'
+//     }
+//   ]
+//
+//   //Act
+//   return db.findRecipesByIngredients(ingredients)
+//   .then(function(data){
+//
+//     //Assert
+//     t.deepEqual(data,expected)
+//   })
+// })
+
+test('listAllIngredients | returns a list of all ingredients', (t) => {
+  t.plan(1)
+
+  //Arrange
+  const input = "ingredients" //OR {cheese: true, eggs: true, bacon: false}
+  const expected = [
+  {id: 1, ingredient_name: 'eggs'},
+  {id: 2, ingredient_name: 'bacon'},
+  {id: 3, ingredient_name: 'cheese'}
+  ]
+
+  //Act
+  return db.listAllIngredients(input)
+  .then(function(data){
+    console.log(data);
+    //Assert
+    t.deepEqual(data,expected)
+  })
+})
