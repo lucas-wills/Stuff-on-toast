@@ -5,17 +5,6 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const api = require('./api')
 
-
-
-
-
-
-
-
-
-
-
-
 module.exports = function (db) {
   const app = express()
 
@@ -47,12 +36,15 @@ module.exports = function (db) {
     }))
   }
 
+  // routes
+  app.use('/api/v1/recipes', api.recipes(db))
+  console.log(api);
 
   // static files
   app.use('/', express.static(path.join(__dirname, 'public')))
 
-  // routes
-  // app.use('/api/v1/cats', api.cats(db))
+
+
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
