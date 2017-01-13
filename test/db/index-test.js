@@ -47,8 +47,8 @@ test('findRecipesByIngredients | returns all recipes from db which include no mo
 })
 
 
-test('addRecipe | adds a recipe to the database and an entry to the join table with the corresponding ingredients', (t) => {
-  t.plan()
+test.only('addRecipe | adds a recipe to the database and an entry to the join table with the corresponding ingredients', (t) => {
+  t.plan(1)
 
   //Arrange
   const ingredientIds = [1, 2]
@@ -61,10 +61,9 @@ test('addRecipe | adds a recipe to the database and an entry to the join table w
     method: "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM",
     image: 'www.realimage4sure.com'
   }
-
   //Act
   db.addRecipe(ingredientIds, recipeName, method, imgUrl)
 
   //Assert
-  t.deepEqual()
+  t.deepEqual(db.findById(4), expectedRecipeEntry)
 })
