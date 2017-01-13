@@ -3,9 +3,13 @@ console.log('bundle loads')
 const morphdom = require('morphdom')
 const events = require('./events')
 const Store = require('./store')
-const view = require('./views')
+const view = require('./views/index')
 
-const model = {appName: 'Hello'}
+const model = {
+  appName: 'Stuff on Toast',
+  view:"select ingredients",
+  recipeId:null
+}
 const store = Store(model)
 
 document.addEventListener('DOMContentLoaded', (e) => {
