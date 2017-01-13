@@ -78,28 +78,34 @@ test('findRecipesByIngredients | returns the egg recipes ', (t) => {
   })
 })
 
-// test('findRecipesByIngredients | returns the egg and bacon recipes ', (t) => {
-//   t.plan(1)
-//
-//   //Arrange
-//   const ingredients = [{id: 1},{id:2}] //OR {cheese: true, eggs: true, bacon: false}
-//   const expected = [
-//     {
-//       id: 3,
-//       recipe_name: 'bacon and eggs',
-//       method: 'Cook bacon. Poach eggs. Add toast',
-//       image: 'http://www.eggcrackin.com/wp-content/uploads/2015/12/047a9eff.product_classic.png'
-//     }
-//   ]
-//
-//   //Act
-//   return db.findRecipesByIngredients(ingredients)
-//   .then(function(data){
-//
-//     //Assert
-//     t.deepEqual(data,expected)
-//   })
-// })
+test.only('findRecipesByIngredients | returns the poached egg and bacon & egg recipes ', (t) => {
+  t.plan(1)
+
+  //Arrange
+  const ingredients = [{id: 1},{id:2}] //OR {cheese: true, eggs: true, bacon: false}
+  const expected = [
+    {
+      id: 1,
+      recipe_name: 'poached egg',
+      method: 'Add a little vinegar to water just coming to the boil. Turn off the heat and gently break eggs into the water. Leave for 3 mins. Drain eggs well before putting onto toast',
+      image: 'http://www.jamieshomecookingskills.com/core_jo/images/jhcs/main-image-2556.jpg'
+    },
+    {
+      id: 3,
+      recipe_name: 'bacon and eggs',
+      method: 'Cook bacon. Poach eggs. Add toast',
+      image: 'http://www.eggcrackin.com/wp-content/uploads/2015/12/047a9eff.product_classic.png'
+    }
+  ]
+
+  //Act
+  return db.findRecipesByIngredients(ingredients)
+  .then(function(data){
+
+    //Assert
+    t.deepEqual(data,expected)
+  })
+})
 
 test('listAllIngredients | returns a list of all ingredients', (t) => {
   t.plan(1)
@@ -141,25 +147,25 @@ test('listOneRecipe | returns a list of one recipes', (t) => {
     t.deepEqual(data,expected)
   })
 })
-
-
-test.only('addRecipe | adds a recipe to the database and an entry to the join table with the corresponding ingredients', (t) => {
-  t.plan(1)
-
-  //Arrange
-  const ingredientIds = [1, 2]
-  const recipeName = 'French Toast'
-  const method = "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM"
-  const imgUrl = 'www.realimage4sure.com'
-  const expectedRecipeEntry = {
-    recipe_id: 4,
-    recipe_name: 'French Toast',
-    method: "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM",
-    image: 'www.realimage4sure.com'
-  }
-  //Act
-  db.addRecipe(ingredientIds, recipeName, method, imgUrl)
-
-  //Assert
-  t.deepEqual(db.findById(4), expectedRecipeEntry)
-})
+//
+//
+// test('addRecipe | adds a recipe to the database and an entry to the join table with the corresponding ingredients', (t) => {
+//   t.plan(1)
+//
+//   //Arrange
+//   const ingredientIds = [1, 2]
+//   const recipeName = 'French Toast'
+//   const method = "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM"
+//   const imgUrl = 'www.realimage4sure.com'
+//   const expectedRecipeEntry = {
+//     recipe_id: 4,
+//     recipe_name: 'French Toast',
+//     method: "Get the bread all nice and eggy then fry 'er up good. Add bacon and KABAM",
+//     image: 'www.realimage4sure.com'
+//   }
+//   //Act
+//   db.addRecipe(ingredientIds, recipeName, method, imgUrl)
+//
+//   //Assert
+//   t.deepEqual(db.findById(4), expectedRecipeEntry)
+// })
