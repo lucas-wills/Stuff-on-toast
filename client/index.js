@@ -15,18 +15,14 @@ const store = Store(model)
 
 document.addEventListener('DOMContentLoaded', (e) => {
   events(store)
-  store.subscribe((model) => {
-    console.log('model:', model)
-
-    render()
-  })
-
+  store.subscribe(function(model){
+     render()
+   })
+  store.ingredientsForm()
   render()
 
   function render () {
     const root = document.querySelector('#app')
     morphdom(root, view(model))
   }
-
-  // store.fetchCats()
 })

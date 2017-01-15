@@ -10,11 +10,13 @@ module.exports = function (store) {
     switch (e.target.id) {
       case 'submit':
         e.preventDefault()
-        const ingredientsData = getFormData(document.querySelector('#ingredients-form'))
+        const form = document.querySelector('#ingredients-form')
+        const ingredientsData = getFormData(form)
+        console.log('ingredientsData from events.js: ',ingredientsData)
         const ingredientIds = Object.keys(ingredientsData).map(ingredientData => {
           return Number(ingredientData)
         })
-        console.log('data', ingredientIds)
+        // console.log('ingredientsIds from events.js', ingredientIds)
 
         store.listOfRecipes()
         break
