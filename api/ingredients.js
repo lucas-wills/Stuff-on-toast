@@ -13,6 +13,7 @@ module.exports = function (db) {
   }
 
   function post (req, res, next) {
+    console.log('Post req: ',req);
   }
 
   return route

@@ -21,8 +21,7 @@ module.exports = function (model) {
 
     update: function (key, update) {
       model[key] = update
-      console.log('model after update:', model)
-
+      // console.log('model after update:', model)
       this.notify(model)
     },
 
@@ -31,29 +30,26 @@ module.exports = function (model) {
     },
 
     displaySpecificRecipe: function (recipeId) {
-      // console.log(recipeId)
+      request.post(`api/v1/recipe/`)
+      .send(recipeId)
+      .then(function(data){
+        console.log('store.js data: ',data)
+        this.update('recipeId', recipeId)
+      })
       this.update('view', 'recipe view')
-      this.update('recipeId', recipeId)
     },
+
     ingredientsForm: function (model) {
       request.get('/api/v1/ingredients')
         .then(res => {
-          // console.log('model in store: ', model)
-          // console.log('res.doby.data: ',res.body.data)
           this.update('ingredients', res.body.data)
         })
       this.update('view', 'select ingredients')
     },
+
     addNewRecipeForm: function () {
       this.update('view', 'add new recipe form')
     },
-    // addRecipe: funciton(){
-    //   this.update('view', 'list of Recipes')
-    // },
-    // showSpecificRecipe: function(){
-    //   request
-    //     .get('/api/v1/resources')
-    // }
 
     notify: function (model) {
       listeners.forEach(function (listener) {
