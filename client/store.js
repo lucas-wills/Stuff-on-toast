@@ -31,14 +31,16 @@ module.exports = function (model) {
     },
 
     displaySpecificRecipe: function (recipeId) {
-      console.log(recipeId)
+      // console.log(recipeId)
       this.update('view', 'recipe view')
       this.update('recipeId', recipeId)
     },
-    ingredientsForm: function () {
+    ingredientsForm: function (model) {
       request.get('/api/v1/ingredients')
         .then(res => {
-          this.update('ingredients', res.body)
+          // console.log('model in store: ', model)
+          // console.log('res.doby.data: ',res.body.data)
+          this.update('ingredients', res.body.data)
         })
       this.update('view', 'select ingredients')
     },

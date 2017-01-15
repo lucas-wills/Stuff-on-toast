@@ -37,6 +37,7 @@
     "tape": "^4.5.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "class-list": "^1.0.17"
   }
 }

@@ -31,11 +31,6 @@ module.exports = function (knex) {
         // console.log(returnedData);
         return returnedData
       })
-      // .where('')
-      // .then(function(data){
-      //   console.log('data is',data);
-      //   return data
-      // })
     },
 
      listAllIngredients: function(table){
@@ -52,6 +47,6 @@ module.exports = function (knex) {
         })
         return knex.insert(arrayToInsert).into('ing_rec_join')
       })
-    }
+
   }
 }

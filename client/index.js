@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
   events(store)
   store.subscribe((model) => {
     console.log('model:', model)
-
     render()
   })
-
+  store.ingredientsForm()
   render()
 
   function render () {

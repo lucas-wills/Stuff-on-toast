@@ -9,7 +9,8 @@ module.exports = function (model) {
   function switchStates (view) {
     switch (view) {
       case 'select ingredients':
-        return ingredientsForm()
+        console.log('model in index: ',model.ingredients)
+        return ingredientsForm(model.ingredients)
       case 'list of Recipes':
         return listOfRecipes()
       case 'recipe view':
